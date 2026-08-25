@@ -21,7 +21,7 @@ env:
   FULL_DISTRIBUTE_PATH: build/distribute
   RUNTIME_URL: https://artifacts.electronjs.org/headers/dist
   RUNTIME_NAME: iojs
-  RUNTIME_VERSION: v29.4.3
+  RUNTIME_VERSION: v43.2.0
 
 permissions:
   contents: read
@@ -58,7 +58,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
+          node-version: '24.x'
 
       - name: Install dependencies
         run: yarn install
