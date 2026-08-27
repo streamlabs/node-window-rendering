@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 3.5)
-project(node_window_rendering)
 
 if(APPLE)
 	if (NOT CMAKE_OSX_ARCHITECTURES)
@@ -7,12 +6,14 @@ if(APPLE)
 	endif()
 	if (NOT CMAKE_OSX_DEPLOYMENT_TARGET)
 		if ("${CMAKE_OSX_ARCHITECTURES}" STREQUAL "arm64")
-			set(CMAKE_OSX_DEPOLYMENT_TARGET "11.0")
+			set(CMAKE_OSX_DEPLOYMENT_TARGET "11.0")
 		else()
 			set(CMAKE_OSX_DEPLOYMENT_TARGET "10.15")
 		endif()
 	endif()
 endif()
+
+project(node_window_rendering)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
 
@@ -22,7 +23,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
 
 SET(NODEJS_URL "https://artifacts.electronjs.org/headers/dist" CACHE STRING "Node.JS URL")
 SET(NODEJS_NAME "iojs" CACHE STRING "Node.JS Name")
-SET(NODEJS_VERSION "v29.4.3" CACHE STRING "Node.JS Version")
+SET(NODEJS_VERSION "v43.2.0" CACHE STRING "Node.JS Version")
 
 include(NodeJS)
 include(CPack)

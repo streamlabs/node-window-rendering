@@ -33,7 +33,6 @@ fi
 
 # Configure
 cmake .. \
--DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 \
 -DCMAKE_BUILD_TYPE=RelWithDebInfo \
 -DCMAKE_INSTALL_PREFIX=${FULL_DISTRIBUTE_PATH}/node-window-rendering \
 ${NODEJS_NAME_PARAM} \
