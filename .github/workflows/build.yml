@@ -46,7 +46,7 @@ jobs:
             Architecture: arm64
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 10
 
@@ -56,7 +56,7 @@ jobs:
         shell: bash
 
       - name: Install Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '24.x'
 
@@ -86,13 +86,13 @@ jobs:
         shell: bash
 
       - name: Publish build artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ${{ env.tagartifact }}-osx-${{ matrix.Architecture }}.tar.gz
           path: ${{ github.workspace }}/${{ env.tagartifact }}-osx-${{ matrix.Architecture }}.tar.gz
 
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           aws-access-key-id: ${{ secrets.AWS_RELEASE_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_RELEASE_SECRET_ACCESS_KEY }}
